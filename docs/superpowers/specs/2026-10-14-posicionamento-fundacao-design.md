@@ -42,11 +42,11 @@ Links do curso: hub `https://hotmart.com/pt-br/club/techs-academy`, produto `htt
 
 ## Projetos
 
-Destaques (nesta ordem): **BlueDraft**, **XCupons** (catálogo multi-marketplace), **ap-loide**. Todos privados, apresentados como case sem código: problema, decisões de arquitetura, trade-offs, stack. Só o BlueDraft recebe case completo neste sub-projeto; XCupons e ap-loide entram com resumo e `case` marcado "em breve".
+Destaques (nesta ordem): **BlueDraft**, **XCupons** (catálogo multi-marketplace), **Avaliação de coordenadores** (repo `ap-loide`; título e slug `avaliacao-coordenadores` neutros de propósito). Todos privados, apresentados como case sem código: problema, decisões de arquitetura, trade-offs, stack. Só o BlueDraft recebe case completo neste sub-projeto; XCupons e Avaliação de coordenadores entram com resumo e `case` marcado "em breve".
 
 "Outros projetos" (compacto): UezCompany API, brdsousa, pass.in, Gym Solid, Async Print API, SaaS Boilerplate, Code-Craft, Mythic Codex.
 
-ap-loide: sem nomes de coordenadores, notas ou prints com dados reais. Citar a instituição de forma neutra ("instituição de ensino técnico") até o Danilo confirmar autorização para nomeá-la.
+Avaliação de coordenadores: sem nomes de coordenadores, notas ou prints com dados reais. Citar a instituição de forma neutra ("instituição de ensino técnico") até o Danilo confirmar autorização para nomeá-la.
 
 ## Visual
 
@@ -102,8 +102,8 @@ Sem framework de testes no repo, e este spec não adiciona um. Cada passo roda `
 - `@react-pdf/renderer` pode conflitar com Server Components: os CVs permanecem client e só o texto muda.
 - Texto de case escrito por IA pode soar genérico: o BlueDraft é o modelo e é revisado pelo Danilo antes de replicar o formato.
 - Textos do hero e de `/sobre` são rascunhos e precisam da revisão de voz do Danilo.
-- ap-loide envolve dados de uma instituição: ver cuidados em "Projetos".
+- Avaliação de coordenadores envolve dados de uma instituição: ver cuidados em "Projetos".
 
 ## Fora do escopo
 
-Payload CMS, blog com posts reais, cases de XCupons e ap-loide, dark mode, i18n em inglês, analytics.
+Payload CMS, blog com posts reais, cases de XCupons e Avaliação de coordenadores, dark mode, i18n em inglês, analytics.
