@@ -1,13 +1,13 @@
-import React from "react";
 import {
   Document,
+  Link,
   Page,
+  StyleSheet,
   Text,
   View,
-  StyleSheet,
-  Link,
 } from "@react-pdf/renderer";
-import { profileData, teacherData } from "./portfolio/data";
+import React from "react";
+import type { Profile, Subject, Talk, TeachingRole } from "@/content/types";
 
 const styles = StyleSheet.create({
   page: {
@@ -162,19 +162,34 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function TeacherPDFDocument() {
+interface TeacherPdfProps {
+  profile: Profile;
+  roles: TeachingRole[];
+  subjects: Subject[];
+  talks: Talk[];
+}
+
+export default function TeacherPDFDocument({
+  profile,
+  roles,
+  subjects,
+  talks,
+}: TeacherPdfProps) {
   return (
     <Document>
       <Page size="A4" style={styles.page}>
         {/* Header */}
         <View style={styles.header}>
-          <Text style={styles.name}>{profileData.name}</Text>
-          <Text style={styles.tagline}>{teacherData.hero.headline}</Text>
+          <Text style={styles.name}>{profile.name}</Text>
+          <Text style={styles.tagline}>Professor técnico de TI</Text>
           <View style={styles.contactRow}>
-            <Link src={`mailto:${profileData.contact.email}`} style={styles.contactLink}>
-              {profileData.contact.email}
+            <Link
+              src={`mailto:${profile.contact.email}`}
+              style={styles.contactLink}
+            >
+              {profile.contact.email}
             </Link>
-            <Link src={profileData.contact.linkedin} style={styles.contactLink}>
+            <Link src={profile.contact.linkedin} style={styles.contactLink}>
               LinkedIn
             </Link>
           </View>
@@ -183,26 +198,15 @@ export default function TeacherPDFDocument() {
         {/* Summary */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Resumo Profissional</Text>
-          <Text style={styles.summaryText}>{teacherData.hero.tagline}</Text>
-        </View>
-
-        {/* Education */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Formação Acadêmica</Text>
-          <View style={styles.eduItem}>
-            <Text style={styles.eduDegree}>Bacharelado em Ciência da Computação</Text>
-            <Text style={styles.eduSchool}>Universidade Federal — 2014 a 2018</Text>
-          </View>
-          <View style={styles.eduItem}>
-            <Text style={styles.eduDegree}>Licenciatura em Computação</Text>
-            <Text style={styles.eduSchool}>Universidade Estadual — 2016 a 2020</Text>
-          </View>
+          <Text style={styles.summaryText}>
+            {profile.about.slice(0, 2).join(" ")}
+          </Text>
         </View>
 
         {/* Teaching experience */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Experiência Docente</Text>
-          {teacherData.experience.map((exp, i) => (
+          {roles.map((exp, i) => (
             <View key={i} style={styles.expItem}>
               <View style={styles.expHeader}>
                 <Text style={styles.expInstitution}>{exp.institution}</Text>
@@ -211,7 +215,9 @@ export default function TeacherPDFDocument() {
               <Text style={styles.expRole}>{exp.role}</Text>
               <View style={styles.tagRow}>
                 {exp.subjects.map((s) => (
-                  <Text key={s} style={styles.tag}>{s}</Text>
+                  <Text key={s} style={styles.tag}>
+                    {s}
+                  </Text>
                 ))}
               </View>
             </View>
@@ -221,19 +227,21 @@ export default function TeacherPDFDocument() {
         {/* Courses */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Disciplinas Ministradas</Text>
-          {teacherData.courses.map((c, i) => (
+          {subjects.map((c, i) => (
             <View key={i} style={styles.courseItem}>
               <Text style={styles.courseName}>{c.name}</Text>
-              <Text style={styles.courseMeta}>{c.level} · {c.audience} · {c.institution}</Text>
+              <Text style={styles.courseMeta}>
+                {c.level} · {c.audience} · {c.institution}
+              </Text>
             </View>
           ))}
         </View>
 
         {/* Talks */}
-        {teacherData.talks && teacherData.talks.length > 0 && (
+        {talks.length > 0 && (
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Palestras & Workshops</Text>
-            {teacherData.talks.map((t, i) => (
+            {talks.map((t, i) => (
               <View key={i} style={styles.talkItem}>
                 <View style={styles.talkHeader}>
                   <Text style={styles.talkTitle}>{t.title}</Text>

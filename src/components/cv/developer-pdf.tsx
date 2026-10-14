@@ -1,13 +1,13 @@
-import React from "react";
 import {
   Document,
+  Link,
   Page,
+  StyleSheet,
   Text,
   View,
-  StyleSheet,
-  Link,
 } from "@react-pdf/renderer";
-import { developerData, profileData } from "./portfolio/data";
+import React from "react";
+import type { Experience, Profile, Project, SkillGroup } from "@/content/types";
 
 const styles = StyleSheet.create({
   page: {
@@ -176,24 +176,39 @@ const styles = StyleSheet.create({
   },
 });
 
-const featuredProjects = developerData.projects.slice(0, 3);
+interface DevPdfProps {
+  profile: Profile;
+  experience: Experience[];
+  projects: Project[];
+  skills: SkillGroup[];
+}
 
-export default function DevPDFDocument() {
+export default function DevPDFDocument({
+  profile,
+  experience,
+  projects,
+  skills,
+}: DevPdfProps) {
+  const featuredProjects = projects.slice(0, 4);
+
   return (
     <Document>
       <Page size="A4" style={styles.page}>
         {/* Header */}
         <View style={styles.header}>
-          <Text style={styles.name}>{profileData.name}</Text>
-          <Text style={styles.tagline}>{developerData.hero.headline}</Text>
+          <Text style={styles.name}>{profile.name}</Text>
+          <Text style={styles.tagline}>{profile.headline}</Text>
           <View style={styles.contactRow}>
-            <Link src={`mailto:${profileData.contact.email}`} style={styles.contactLink}>
-              {profileData.contact.email}
+            <Link
+              src={`mailto:${profile.contact.email}`}
+              style={styles.contactLink}
+            >
+              {profile.contact.email}
             </Link>
-            <Link src={profileData.contact.linkedin} style={styles.contactLink}>
+            <Link src={profile.contact.linkedin} style={styles.contactLink}>
               LinkedIn
             </Link>
-            <Link src={profileData.contact.github} style={styles.contactLink}>
+            <Link src={profile.contact.github} style={styles.contactLink}>
               GitHub
             </Link>
           </View>
@@ -202,13 +217,15 @@ export default function DevPDFDocument() {
         {/* Summary */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Resumo Profissional</Text>
-          <Text style={styles.summaryText}>{developerData.hero.tagline}</Text>
+          <Text style={styles.summaryText}>
+            {profile.about.slice(0, 2).join(" ")}
+          </Text>
         </View>
 
         {/* Experience */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Experiência Profissional</Text>
-          {developerData.experience.map((exp, i) => (
+          {experience.map((exp, i) => (
             <View key={i} style={styles.expItem}>
               <View style={styles.expHeader}>
                 <Text style={styles.expCompany}>{exp.company}</Text>
@@ -218,7 +235,9 @@ export default function DevPDFDocument() {
               <Text style={styles.expDesc}>{exp.description}</Text>
               <View style={styles.tagRow}>
                 {exp.tech.map((t) => (
-                  <Text key={t} style={styles.tag}>{t}</Text>
+                  <Text key={t} style={styles.tag}>
+                    {t}
+                  </Text>
                 ))}
               </View>
             </View>
@@ -231,13 +250,15 @@ export default function DevPDFDocument() {
           {featuredProjects.map((p, i) => (
             <View key={i} style={styles.projectItem}>
               <View style={styles.projectHeader}>
-                <Text style={styles.projectName}>{p.name}</Text>
-                {p.tag && <Text style={styles.projectTag}>{p.tag}</Text>}
+                <Text style={styles.projectName}>{p.title}</Text>
+                <Text style={styles.projectTag}>{p.status}</Text>
               </View>
-              <Text style={styles.projectDesc}>{p.description}</Text>
+              <Text style={styles.projectDesc}>{p.summary}</Text>
               <View style={styles.tagRow}>
-                {p.tech.map((t) => (
-                  <Text key={t} style={styles.tag}>{t}</Text>
+                {p.stack.map((t) => (
+                  <Text key={t} style={styles.tag}>
+                    {t}
+                  </Text>
                 ))}
               </View>
             </View>
@@ -248,23 +269,16 @@ export default function DevPDFDocument() {
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Stack Técnica</Text>
           <View style={styles.stackGrid}>
-            {Object.entries(developerData.stack).map(([cat, techs]) => (
-              <View key={cat} style={styles.stackCategory}>
-                <Text style={styles.stackCategoryName}>{cat}</Text>
-                {techs.map((t) => (
-                  <Text key={t} style={styles.stackItem}>• {t}</Text>
+            {skills.map(({ category, items }) => (
+              <View key={category} style={styles.stackCategory}>
+                <Text style={styles.stackCategoryName}>{category}</Text>
+                {items.map((t) => (
+                  <Text key={t} style={styles.stackItem}>
+                    • {t}
+                  </Text>
                 ))}
               </View>
             ))}
-          </View>
-        </View>
-
-        {/* Education placeholder */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Formação Acadêmica</Text>
-          <View style={styles.eduItem}>
-            <Text style={styles.eduDegree}>Bacharelado em Ciência da Computação</Text>
-            <Text style={styles.eduSchool}>Universidade Federal — 2014 a 2018</Text>
           </View>
         </View>
       </Page>
