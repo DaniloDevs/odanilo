@@ -7,7 +7,7 @@ import SectionWrapper from "./section-wrapper";
 export function AcademyCta({ academy }: { academy: Academy }) {
   return (
     <SectionWrapper className="bg-academy-soft">
-      <p className="font-mono text-xs uppercase tracking-widest text-academy-strong">
+      <p className="font-mono text-xs uppercase tracking-widest text-amber-800">
         Docência
       </p>
       <h2 className="mt-3 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl">

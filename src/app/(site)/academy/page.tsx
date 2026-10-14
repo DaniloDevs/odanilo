@@ -53,7 +53,7 @@ export default async function AcademyPage() {
           <div className="mt-8 grid gap-8 md:grid-cols-3">
             {academy.pillars.map((p, i) => (
               <div key={p.title}>
-                <span className="font-mono text-sm text-academy-strong">
+                <span className="font-mono text-sm text-amber-800">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="mt-2 font-semibold text-gray-900">{p.title}</h3>

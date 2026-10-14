@@ -10,3 +10,12 @@
 - [ ] Nome do curso 8488982: hoje o botão diz "Conhecer o curso"
 - [ ] Avaliação de coordenadores: autorizado citar a instituição pelo nome? (hoje o projeto é neutro)
 - [ ] URL de produção do site (`NEXT_PUBLIC_SITE_URL`) para sitemap e OG
+- [ ] DECISÃO: o nome do Instituto aparece em /sobre, /academy e nos CVs, então o projeto "Avaliação de coordenadores" continua identificável. Autorizar citar a instituição ou manter assim?
+- [ ] async-print-api: o repositório DaniloDevs/async-print-api não existe (404). Remover o projeto, ajustar o link ou apontar para o repo certo?
+- [ ] UezCompany API: a documentação pública (api.uezcompany.com/docs) está fora do ar; status foi para "Cliente" e o texto foi para o passado. Conferir.
+- [ ] XCupons: "está sendo redesenhado" e a stack listada (TypeScript, PostgreSQL, Docker, Turborepo); acrescentar o que mais se aplica.
+- [ ] Avaliação de coordenadores: confirmar o status "Em produção".
+- [ ] academy.ts: o tom "como um dev explicando para outro dev" combina com um curso de informática para iniciantes?
+- [ ] BlueDraft: "correções entram como novos registros" e o trade-off ligado a isso são inferências.
+- [ ] Definir NEXT_PUBLIC_SITE_URL (ou domínio de produção na Vercel) antes de publicar.
+- [ ] Conferir no navegador (ninguém fez): hero e foto em 375px, menu mobile, /projetos/bluedraft, /cv/developer e /cv/teacher (PDFViewer em Safari/Android), impressão (Ctrl+P), redirects, og:image.

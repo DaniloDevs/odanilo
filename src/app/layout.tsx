@@ -27,6 +27,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     siteName: siteConfig.name,
+    title: `${siteConfig.name} — Desenvolvedor fullstack e educador`,
+    description: siteConfig.description,
   },
 };
 

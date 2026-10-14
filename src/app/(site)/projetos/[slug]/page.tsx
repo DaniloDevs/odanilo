@@ -144,11 +144,11 @@ export default async function ProjectPage({
               </p>
             </section>
           </div>
-        ) : (
+        ) : project.featured ? (
           <p className="mt-14 rounded-xl border border-dashed border-gray-300 p-6 text-sm text-gray-600">
             O case completo deste projeto está em preparação.
           </p>
-        )}
+        ) : null}
       </div>
     </article>
   );
