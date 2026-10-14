@@ -6,7 +6,6 @@ import {
   Text,
   View,
 } from "@react-pdf/renderer";
-import React from "react";
 import type { Profile, Subject, Talk, TeachingRole } from "@/content/types";
 
 const styles = StyleSheet.create({
@@ -206,8 +205,8 @@ export default function TeacherPDFDocument({
         {/* Teaching experience */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Experiência Docente</Text>
-          {roles.map((exp, i) => (
-            <View key={i} style={styles.expItem}>
+          {roles.map((exp) => (
+            <View key={`${exp.role}-${exp.period}`} style={styles.expItem}>
               <View style={styles.expHeader}>
                 <Text style={styles.expInstitution}>{exp.institution}</Text>
                 <Text style={styles.expPeriod}>{exp.period}</Text>
@@ -227,8 +226,8 @@ export default function TeacherPDFDocument({
         {/* Courses */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Disciplinas Ministradas</Text>
-          {subjects.map((c, i) => (
-            <View key={i} style={styles.courseItem}>
+          {subjects.map((c) => (
+            <View key={c.name} style={styles.courseItem}>
               <Text style={styles.courseName}>{c.name}</Text>
               <Text style={styles.courseMeta}>
                 {c.level} · {c.audience} · {c.institution}
@@ -241,8 +240,8 @@ export default function TeacherPDFDocument({
         {talks.length > 0 && (
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Palestras & Workshops</Text>
-            {talks.map((t, i) => (
-              <View key={i} style={styles.talkItem}>
+            {talks.map((t) => (
+              <View key={t.title} style={styles.talkItem}>
                 <View style={styles.talkHeader}>
                   <Text style={styles.talkTitle}>{t.title}</Text>
                   <Text style={styles.talkYear}>{t.year}</Text>

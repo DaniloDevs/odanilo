@@ -2,7 +2,7 @@ import { ArrowLeft, ExternalLink, Github, Lock } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button-variants";
 import { getProject, getProjects } from "@/content";
 
 type Params = { slug: string };

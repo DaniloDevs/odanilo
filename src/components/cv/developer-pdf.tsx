@@ -6,7 +6,6 @@ import {
   Text,
   View,
 } from "@react-pdf/renderer";
-import React from "react";
 import type { Experience, Profile, Project, SkillGroup } from "@/content/types";
 
 const styles = StyleSheet.create({
@@ -225,8 +224,8 @@ export default function DevPDFDocument({
         {/* Experience */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Experiência Profissional</Text>
-          {experience.map((exp, i) => (
-            <View key={i} style={styles.expItem}>
+          {experience.map((exp) => (
+            <View key={`${exp.company}-${exp.role}`} style={styles.expItem}>
               <View style={styles.expHeader}>
                 <Text style={styles.expCompany}>{exp.company}</Text>
                 <Text style={styles.expPeriod}>{exp.period}</Text>
@@ -247,8 +246,8 @@ export default function DevPDFDocument({
         {/* Projects */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Projetos em Destaque</Text>
-          {featuredProjects.map((p, i) => (
-            <View key={i} style={styles.projectItem}>
+          {featuredProjects.map((p) => (
+            <View key={p.slug} style={styles.projectItem}>
               <View style={styles.projectHeader}>
                 <Text style={styles.projectName}>{p.title}</Text>
                 <Text style={styles.projectTag}>{p.status}</Text>

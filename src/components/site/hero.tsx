@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button-variants";
 import type { Profile } from "@/content/types";
 import { cn } from "@/lib/utils";
 
