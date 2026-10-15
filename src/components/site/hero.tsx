@@ -1,3 +1,4 @@
+import { FileDown, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button-variants";
@@ -18,32 +19,42 @@ export function Hero({ profile }: { profile: Profile }) {
           <p className="mt-5 max-w-xl text-base leading-relaxed text-gray-600">
             {profile.subheadline}
           </p>
-          <p className="mt-3 text-sm text-gray-500">{profile.availability}</p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="#cases"
+          <p className="mt-5 text-sm font-medium text-gray-900">
+            {profile.availability}
+          </p>
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <a
+              href={`mailto:${profile.contact.email}`}
               className={cn(
                 buttonVariants({ size: "lg" }),
                 "bg-brand text-white hover:bg-brand-strong",
               )}
             >
-              Ver cases
-            </Link>
+              <Mail className="mr-1.5 h-4 w-4" />
+              Falar por email
+            </a>
             <Link
-              href="/academy"
+              href="/cv/developer"
               className={buttonVariants({ size: "lg", variant: "outline" })}
             >
-              Techs Academy
+              <FileDown className="mr-1.5 h-4 w-4" />
+              Currículo
+            </Link>
+            <Link
+              href="#cases"
+              className="px-2 text-sm font-medium text-brand underline-offset-4 hover:underline"
+            >
+              Ver cases
             </Link>
           </div>
         </div>
-        <div className="relative mx-auto aspect-[2/3] w-full max-w-xs overflow-hidden rounded-3xl bg-brand-soft">
+        <div className="relative mx-auto aspect-[2/3] w-full max-w-48 md:max-w-xs overflow-hidden rounded-3xl bg-brand-soft">
           <Image
             src={profile.photo}
             alt={`Foto de ${profile.shortName}`}
             fill
             priority
-            sizes="(min-width: 768px) 320px, 70vw"
+            sizes="(min-width: 768px) 320px, 192px"
             className="object-contain object-bottom"
           />
         </div>

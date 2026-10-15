@@ -1,9 +1,15 @@
-import { ArrowLeft, ExternalLink, Github, Lock } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  ExternalLink,
+  Github,
+  Lock,
+} from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { buttonVariants } from "@/components/ui/button-variants";
-import { getProject, getProjects } from "@/content";
+import { getFeaturedProjects, getProject, getProjects } from "@/content";
 
 type Params = { slug: string };
 
@@ -30,6 +36,10 @@ export default async function ProjectPage({
   const { slug } = await params;
   const project = await getProject(slug);
   if (!project) notFound();
+
+  const featured = await getFeaturedProjects();
+  const index = featured.findIndex((p) => p.slug === project.slug);
+  const next = index >= 0 ? featured[(index + 1) % featured.length] : null;
 
   return (
     <article className="px-6 pt-10 pb-20">
@@ -150,6 +160,28 @@ export default async function ProjectPage({
             em preparação. O BlueDraft já tem o formato completo.
           </p>
         ) : null}
+
+        <nav
+          aria-label="Próximo passo"
+          className="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-gray-200 pt-6 text-sm"
+        >
+          <Link
+            href="/projetos"
+            className="inline-flex items-center gap-1.5 text-gray-600 hover:text-gray-900"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Todos os projetos
+          </Link>
+          {next && next.slug !== project.slug && (
+            <Link
+              href={`/projetos/${next.slug}`}
+              className="inline-flex items-center gap-1.5 font-medium text-brand hover:text-brand-strong"
+            >
+              Próximo: {next.title}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          )}
+        </nav>
       </div>
     </article>
   );

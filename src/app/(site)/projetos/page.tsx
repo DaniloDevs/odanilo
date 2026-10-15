@@ -26,6 +26,7 @@ export default async function ProjectsPage() {
         description="Os destaques são privados e descritos como cases: problema, decisões de arquitetura e trade-offs. Os demais têm código aberto ou foram entregues a clientes."
       />
       <section className="px-6 py-10">
+        <h2 className="sr-only">Cases em destaque</h2>
         <div className="mx-auto grid max-w-5xl gap-5 md:grid-cols-3">
           {featured.map((project) => (
             <CaseCard key={project.slug} project={project} />

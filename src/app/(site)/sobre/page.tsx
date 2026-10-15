@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ContactCta } from "@/components/site/contact-cta";
 import { PageHeader } from "@/components/site/page-header";
 import Timeline from "@/components/site/timeline";
 import { getExperience, getProfile } from "@/content";
@@ -99,8 +98,6 @@ export default async function AboutPage() {
           </div>
         </div>
       </section>
-
-      <ContactCta profile={profile} />
     </>
   );
 }

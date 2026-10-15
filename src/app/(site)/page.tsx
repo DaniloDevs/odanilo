@@ -1,6 +1,5 @@
 import { AcademyCta } from "@/components/site/academy-cta";
 import { CaseCard } from "@/components/site/case-card";
-import { ContactCta } from "@/components/site/contact-cta";
 import { Hero } from "@/components/site/hero";
 import SectionWrapper from "@/components/site/section-wrapper";
 import { WorkMethod } from "@/components/site/work-method";
@@ -34,7 +33,6 @@ export default async function Home() {
       </SectionWrapper>
       <WorkMethod />
       <AcademyCta academy={academy} />
-      <ContactCta profile={profile} />
     </>
   );
 }

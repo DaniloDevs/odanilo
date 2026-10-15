@@ -43,6 +43,12 @@ export default function NavBar() {
               {l.label}
             </Link>
           ))}
+          <Link
+            href="#contato"
+            className="rounded-md bg-brand px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-brand-strong"
+          >
+            Contato
+          </Link>
         </div>
 
         <button
@@ -70,6 +76,13 @@ export default function NavBar() {
               {l.label}
             </Link>
           ))}
+          <Link
+            href="#contato"
+            onClick={() => setOpen(false)}
+            className="block py-1 text-sm font-medium text-brand"
+          >
+            Contato
+          </Link>
         </div>
       )}
     </nav>
