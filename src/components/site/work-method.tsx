@@ -39,7 +39,7 @@ export function WorkMethod() {
         ))}
       </div>
       <div className="mt-12 overflow-hidden rounded-xl border border-white/10 bg-black/30 p-5 font-mono text-sm leading-relaxed text-gray-300">
-        <p className="text-gray-500">
+        <p className="text-gray-400">
           # exemplo: XCupons (case completo em preparação)
         </p>
         <p>

@@ -133,4 +133,13 @@
   html {
     @apply font-sans;
   }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  ::selection {
+    background: color-mix(in oklch, var(--color-brand) 25%, transparent);
+    color: inherit;
+  }
 }
