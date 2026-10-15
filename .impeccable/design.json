@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-14T12:00:00Z",
+  "title": "Design System: Portfólio Danilo Romão",
+  "extensions": {
+    "colorMeta": {
+      "brand": { "role": "primary", "displayName": "Azul Techs", "canonical": "oklch(0.546 0.245 262.881)", "tonalRamp": ["oklch(0.2 0.1 262.9)","oklch(0.3 0.15 262.9)","oklch(0.4 0.2 262.9)","oklch(0.546 0.245 262.9)","oklch(0.65 0.2 262.9)","oklch(0.78 0.12 262.9)","oklch(0.9 0.05 262.9)","oklch(0.97 0.014 254.6)"] },
+      "academy": { "role": "secondary", "displayName": "Âmbar Academy", "canonical": "oklch(0.769 0.188 70.08)", "tonalRamp": ["oklch(0.25 0.06 70)","oklch(0.35 0.09 70)","oklch(0.47 0.12 65)","oklch(0.58 0.15 60)","oklch(0.666 0.179 58.3)","oklch(0.769 0.188 70.1)","oklch(0.9 0.1 85)","oklch(0.987 0.022 95.3)"] },
+      "graphite": { "role": "neutral", "displayName": "Grafite Noite", "canonical": "oklch(0.13 0.028 261.692)", "tonalRamp": ["oklch(0.13 0.028 261.7)","oklch(0.22 0.03 261.7)","oklch(0.33 0.03 261.7)","oklch(0.45 0.025 261.7)","oklch(0.6 0.02 261.7)","oklch(0.75 0.015 261.7)","oklch(0.9 0.008 261.7)","oklch(0.97 0.003 261.7)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "H1 do hero." },
+      "label": { "displayName": "Label mono", "purpose": "Eyebrows, numeração e stack." }
+    },
+    "shadows": [
+      { "name": "hover-card", "value": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)", "purpose": "Só no hover de cards." }
+    ],
+    "motion": [
+      { "name": "reveal", "value": "0.5s ease-out, y 32px → 0", "purpose": "Entrada das seções ao rolar, uma vez." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button", "kind": "button", "refersTo": "button-primary",
+      "description": "Ação principal em azul.",
+      "html": "<button class=\"ds-btn-primary\">Ver cases</button>",
+      "css": ".ds-btn-primary{background:oklch(0.546 0.245 262.881);color:#fff;height:40px;padding:0 14px;border:1px solid transparent;border-radius:8px;font:500 14px Inter,sans-serif;cursor:pointer;transition:background .15s}.ds-btn-primary:hover{background:oklch(0.488 0.243 264.376)}.ds-btn-primary:focus-visible{outline:none;box-shadow:0 0 0 3px oklch(0.708 0 0 / .5)}"
+    },
+    {
+      "name": "Academy Button", "kind": "button", "refersTo": "button-academy",
+      "description": "CTA do curso, único uso do âmbar.",
+      "html": "<button class=\"ds-btn-academy\">Conhecer o curso</button>",
+      "css": ".ds-btn-academy{background:oklch(0.769 0.188 70.08);color:oklch(0.13 0.028 261.692);height:40px;padding:0 14px;border:1px solid transparent;border-radius:8px;font:500 14px Inter,sans-serif;cursor:pointer;transition:background .15s}.ds-btn-academy:hover{background:oklch(0.666 0.179 58.318)}.ds-btn-academy:focus-visible{outline:none;box-shadow:0 0 0 3px oklch(0.708 0 0 / .5)}"
+    },
+    {
+      "name": "Outline Button", "kind": "button", "refersTo": "button-outline",
+      "description": "Ação secundária.",
+      "html": "<button class=\"ds-btn-outline\">Techs Academy</button>",
+      "css": ".ds-btn-outline{background:#fff;color:oklch(0.145 0 0);height:40px;padding:0 14px;border:1px solid oklch(0.922 0 0);border-radius:8px;font:500 14px Inter,sans-serif;cursor:pointer;box-shadow:0 1px 2px rgb(0 0 0/.05)}.ds-btn-outline:hover{background:oklch(0.97 0 0)}.ds-btn-outline:focus-visible{outline:none;box-shadow:0 0 0 3px oklch(0.708 0 0 / .5)}"
+    },
+    {
+      "name": "Stack Chip", "kind": "chip", "refersTo": "stack-chip",
+      "description": "Tecnologia do case em mono.",
+      "html": "<span class=\"ds-chip\">Next.js</span>",
+      "css": ".ds-chip{display:inline-block;background:oklch(0.97 0.014 254.604);color:oklch(0.488 0.243 264.376);padding:2px 8px;border-radius:4px;font:400 11px 'Geist Mono',ui-monospace,monospace}"
+    },
+    {
+      "name": "Case Card", "kind": "card", "refersTo": "case-card",
+      "description": "Resumo de projeto com stack e rodapé.",
+      "html": "<div class=\"ds-card\"><h3>BlueDraft</h3><p>Plataforma de planejamento de aulas.</p><span class=\"ds-card-link\">Ler case →</span></div>",
+      "css": ".ds-card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:24px;max-width:320px;font-family:Inter,sans-serif;transition:border-color .15s,box-shadow .15s}.ds-card:hover{border-color:oklch(0.546 0.245 262.881 / .4);box-shadow:0 4px 6px -1px rgb(0 0 0/.1)}.ds-card h3{margin:0 0 8px;font-size:18px;font-weight:600;color:#111827}.ds-card p{margin:0 0 16px;font-size:14px;line-height:1.6;color:#4b5563}.ds-card-link{font-size:12px;font-weight:500;color:oklch(0.546 0.245 262.881)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "O Caderno de Bordo",
+    "overview": "O site se comporta como o diário técnico de quem diagnostica sistemas: página clara, registro numerado, detalhes em mono. A estrutura repete o método do próprio Danilo (sintoma, causa raiz, documentação), então a interface prova o discurso em vez de decorá-lo.",
+    "keyCharacteristics": ["Tema claro apenas; sem dark mode neste ciclo.", "Azul para ação e navegação, âmbar exclusivo da Academy.", "Mono para rótulos, numeração e stack; Inter para o resto.", "Plano com borda fina; sombra só em resposta a hover.", "Foto em PNG transparente sobre forma azul suave."],
+    "rules": [
+      { "name": "The Amber Is Course Rule", "body": "Âmbar aparece só em Academy e CTAs de curso. Fora disso o acento é azul.", "section": "colors" },
+      { "name": "The Contrast Rule", "body": "Texto âmbar sobre fundo claro usa tom escuro (amber-800); âmbar saturado fica em fundos de botão com texto grafite.", "section": "colors" },
+      { "name": "The Mono Is Metadata Rule", "body": "Mono só para metadado: eyebrows, numeração, stack, exemplos de log.", "section": "typography" },
+      { "name": "The Flat-At-Rest Rule", "body": "Superfícies não têm sombra em repouso. Sombra é resposta a hover.", "section": "elevation" }
+    ],
+    "dos": ["Do usar azul Techs para toda ação principal e âmbar apenas em Academy e CTAs de curso.", "Do manter sombras fora do estado de repouso; borda de 1px faz o trabalho.", "Do usar Geist Mono em eyebrows, numeração e stack.", "Do alternar faixas claras com grafite para criar ritmo.", "Do mostrar cadeado e \"Repositório privado\" em projetos privados, nunca um botão de repositório."],
+    "donts": ["Don't reintroduzir a divisão em cartões Developer/Teacher, o avatar do Unsplash ou o terminal \"build-amazing-things\".", "Don't usar âmbar como acento geral nem texto âmbar saturado sobre branco.", "Don't adicionar dark mode ou gradientes neste ciclo.", "Don't usar mono em texto corrido.", "Don't inventar métricas, depoimentos ou logos de clientes para preencher seções."]
+  }
+}
