@@ -14,32 +14,32 @@ export const projects: Project[] = [
     order: 1,
     case: {
       problem:
-        "Um professor reaproveita o mesmo plano de ensino em várias turmas e vários semestres. Se o plano é um documento único, editar uma aula hoje reescreve o que já foi dado ontem, e o registro do que de fato foi ministrado deixa de ser confiável.",
+        "Um professor reaproveita o mesmo plano de ensino em várias turmas, semestres e instituições. Se o plano é um documento único, editar uma aula reescreve o que já foi dado e o registro do que foi ministrado deixa de ser confiável.",
       decisions: [
         {
           title: "Blueprint separado da execução",
-          body: "O planejamento (disciplina, ciclos, aulas) é um blueprint, o plano-modelo do professor. Cada turma recebe uma vigência: a cópia desse plano em execução naquela turma. Mudar o blueprint nunca altera uma vigência por baixo dos panos.",
+          body: "O planejamento (disciplina, ciclos, aulas) é o plano-modelo. Cada turma recebe uma vigência, que é um snapshot dele no momento da criação. Editar o blueprint não toca nas vigências.",
         },
         {
-          title: "Sync Engine com diff revisado",
-          body: "Quando o blueprint muda, as vigências só recebem a mudança por meio de um diff que o professor revisa e aprova. A propagação é explícita, nunca automática.",
+          title: "Sync Engine por versão e por campo",
+          body: "Cada aula tem uma versão, e o registro guarda a versão do snapshot. Um registro só diverge se ainda não foi ministrado e sua versão está atrás. A detecção é automática; a resolução é manual: o professor aplica ou mantém cada campo (nome, tópicos, conteúdo, resumo). Ciclos e aulas novos também entram por revisão, só em vigências ativas.",
         },
         {
-          title: "Registros ministrados imutáveis",
-          body: "O que já foi ministrado vira registro imutável. Correções entram como novos registros, preservando o histórico.",
+          title: "Imutabilidade após ministrar",
+          body: "Marcar uma aula como ministrada é irreversível e congela o conteúdo. Só as anotações da aula seguem editáveis enquanto a vigência está ativa, e uma aula com histórico não pode ser excluída.",
         },
         {
-          title: "Monorepo com contratos tipados",
-          body: "Monorepo com Turborepo, API em Fastify com tRPC e front em Next.js. Os tipos atravessam as camadas, e o trabalho segue specs e planos numerados por fase.",
+          title: "Núcleo puro e API em camadas",
+          body: "Diff, ordenação e métricas ficam em um pacote sem I/O, com testes próprios. A API usa casos de uso com repositório injetado, testados com repositórios em memória. Os erros de domínio viram erros de tRPC só no router, e toda consulta é filtrada por usuário.",
         },
       ],
       tradeoffs: [
-        "A etapa de revisão do diff adiciona um passo ao fluxo do professor, em troca de nunca corromper histórico.",
-        "Manter blueprint e vigência separados duplica dados, mas isola o planejamento da execução.",
-        "Imutabilidade exige modelar correções como eventos novos, o que complica o modelo de dados.",
+        "A revisão campo a campo adiciona um passo ao fluxo do professor, em troca de nunca sobrescrever conteúdo.",
+        "O snapshot duplica dados, mas isola o planejamento da execução.",
+        "Uma aula ministrada com erro de conteúdo não pode ser corrigida, só anotada. Isso protege o histórico, mas é rígido.",
       ],
       result:
-        "Em desenvolvimento ativo. O repositório é privado; a intenção é abri-lo depois de documentado.",
+        "Em desenvolvimento ativo e em uso nas minhas aulas. O repositório é privado.",
     },
   },
   {
