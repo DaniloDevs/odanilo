@@ -1,71 +1,228 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-14T12:00:00Z",
+  "generatedAt": "2026-10-15T14:01:20.402Z",
   "title": "Design System: Portfólio Danilo Romão",
   "extensions": {
     "colorMeta": {
-      "brand": { "role": "primary", "displayName": "Azul Techs", "canonical": "oklch(0.546 0.245 262.881)", "tonalRamp": ["oklch(0.2 0.1 262.9)","oklch(0.3 0.15 262.9)","oklch(0.4 0.2 262.9)","oklch(0.546 0.245 262.9)","oklch(0.65 0.2 262.9)","oklch(0.78 0.12 262.9)","oklch(0.9 0.05 262.9)","oklch(0.97 0.014 254.6)"] },
-      "academy": { "role": "secondary", "displayName": "Âmbar Academy", "canonical": "oklch(0.769 0.188 70.08)", "tonalRamp": ["oklch(0.25 0.06 70)","oklch(0.35 0.09 70)","oklch(0.47 0.12 65)","oklch(0.58 0.15 60)","oklch(0.666 0.179 58.3)","oklch(0.769 0.188 70.1)","oklch(0.9 0.1 85)","oklch(0.987 0.022 95.3)"] },
-      "graphite": { "role": "neutral", "displayName": "Grafite Noite", "canonical": "oklch(0.13 0.028 261.692)", "tonalRamp": ["oklch(0.13 0.028 261.7)","oklch(0.22 0.03 261.7)","oklch(0.33 0.03 261.7)","oklch(0.45 0.025 261.7)","oklch(0.6 0.02 261.7)","oklch(0.75 0.015 261.7)","oklch(0.9 0.008 261.7)","oklch(0.97 0.003 261.7)"] }
+      "brand": {
+        "role": "primary",
+        "displayName": "Azul Techs",
+        "canonical": "oklch(0.546 0.245 262.881)",
+        "tonalRamp": [
+          "oklch(0.2 0.1 262.9)",
+          "oklch(0.3 0.15 262.9)",
+          "oklch(0.4 0.2 262.9)",
+          "oklch(0.546 0.245 262.9)",
+          "oklch(0.65 0.2 262.9)",
+          "oklch(0.78 0.12 262.9)",
+          "oklch(0.9 0.05 262.9)",
+          "oklch(0.97 0.014 254.6)"
+        ]
+      },
+      "academy": {
+        "role": "secondary",
+        "displayName": "Âmbar Academy",
+        "canonical": "oklch(0.769 0.188 70.08)",
+        "tonalRamp": [
+          "oklch(0.25 0.06 70)",
+          "oklch(0.35 0.09 70)",
+          "oklch(0.47 0.12 65)",
+          "oklch(0.58 0.15 60)",
+          "oklch(0.666 0.179 58.3)",
+          "oklch(0.769 0.188 70.1)",
+          "oklch(0.9 0.1 85)",
+          "oklch(0.987 0.022 95.3)"
+        ]
+      },
+      "graphite": {
+        "role": "neutral",
+        "displayName": "Grafite Noite",
+        "canonical": "oklch(0.13 0.028 261.692)",
+        "tonalRamp": [
+          "oklch(0.13 0.028 261.7)",
+          "oklch(0.22 0.03 261.7)",
+          "oklch(0.33 0.03 261.7)",
+          "oklch(0.45 0.025 261.7)",
+          "oklch(0.6 0.02 261.7)",
+          "oklch(0.75 0.015 261.7)",
+          "oklch(0.9 0.008 261.7)",
+          "oklch(0.97 0.003 261.7)"
+        ]
+      },
+      "surface-gray": {
+        "role": "neutral",
+        "displayName": "Cinza Névoa",
+        "canonical": "oklch(0.985 0.002 247.839)",
+        "tonalRamp": [
+          "oklch(0.2 0.01 248)",
+          "oklch(0.32 0.01 248)",
+          "oklch(0.45 0.01 248)",
+          "oklch(0.6 0.008 248)",
+          "oklch(0.75 0.006 248)",
+          "oklch(0.88 0.004 248)",
+          "oklch(0.95 0.003 248)",
+          "oklch(0.985 0.002 247.8)"
+        ]
+      },
+      "academy-line": {
+        "role": "secondary",
+        "displayName": "Linha Âmbar",
+        "canonical": "oklch(0.924 0.12 95.746)",
+        "tonalRamp": [
+          "oklch(0.3 0.06 90)",
+          "oklch(0.4 0.08 90)",
+          "oklch(0.5 0.1 90)",
+          "oklch(0.62 0.12 92)",
+          "oklch(0.75 0.13 94)",
+          "oklch(0.85 0.12 95)",
+          "oklch(0.924 0.12 95.7)",
+          "oklch(0.97 0.05 96)"
+        ]
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "H1 do hero." },
-      "label": { "displayName": "Label mono", "purpose": "Eyebrows, numeração e stack." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "H1 do hero."
+      },
+      "label": {
+        "displayName": "Label mono",
+        "purpose": "Eyebrows, numeração e stack."
+      }
     },
     "shadows": [
-      { "name": "hover-card", "value": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)", "purpose": "Só no hover de cards." }
+      {
+        "name": "hover-card",
+        "value": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+        "purpose": "Só no hover de cards."
+      }
     ],
     "motion": [
-      { "name": "reveal", "value": "0.5s ease-out, y 32px → 0", "purpose": "Entrada das seções ao rolar, uma vez." }
+      {
+        "name": "reveal",
+        "value": "0.5s ease-out, y 32px → 0",
+        "purpose": "Entrada das seções ao rolar, uma vez."
+      }
     ],
     "breakpoints": [
-      { "name": "sm", "value": "640px" },
-      { "name": "md", "value": "768px" }
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      }
     ]
   },
   "components": [
     {
-      "name": "Primary Button", "kind": "button", "refersTo": "button-primary",
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
       "description": "Ação principal em azul.",
       "html": "<button class=\"ds-btn-primary\">Ver cases</button>",
       "css": ".ds-btn-primary{background:oklch(0.546 0.245 262.881);color:#fff;height:40px;padding:0 14px;border:1px solid transparent;border-radius:8px;font:500 14px Inter,sans-serif;cursor:pointer;transition:background .15s}.ds-btn-primary:hover{background:oklch(0.488 0.243 264.376)}.ds-btn-primary:focus-visible{outline:none;box-shadow:0 0 0 3px oklch(0.708 0 0 / .5)}"
     },
     {
-      "name": "Academy Button", "kind": "button", "refersTo": "button-academy",
+      "name": "Academy Button",
+      "kind": "button",
+      "refersTo": "button-academy",
       "description": "CTA do curso, único uso do âmbar.",
       "html": "<button class=\"ds-btn-academy\">Conhecer o curso</button>",
       "css": ".ds-btn-academy{background:oklch(0.769 0.188 70.08);color:oklch(0.13 0.028 261.692);height:40px;padding:0 14px;border:1px solid transparent;border-radius:8px;font:500 14px Inter,sans-serif;cursor:pointer;transition:background .15s}.ds-btn-academy:hover{background:oklch(0.666 0.179 58.318)}.ds-btn-academy:focus-visible{outline:none;box-shadow:0 0 0 3px oklch(0.708 0 0 / .5)}"
     },
     {
-      "name": "Outline Button", "kind": "button", "refersTo": "button-outline",
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
       "description": "Ação secundária.",
       "html": "<button class=\"ds-btn-outline\">Techs Academy</button>",
-      "css": ".ds-btn-outline{background:#fff;color:oklch(0.145 0 0);height:40px;padding:0 14px;border:1px solid oklch(0.922 0 0);border-radius:8px;font:500 14px Inter,sans-serif;cursor:pointer;box-shadow:0 1px 2px rgb(0 0 0/.05)}.ds-btn-outline:hover{background:oklch(0.97 0 0)}.ds-btn-outline:focus-visible{outline:none;box-shadow:0 0 0 3px oklch(0.708 0 0 / .5)}"
+      "css": ".ds-btn-outline{background:#fff;color:oklch(0.145 0 0);height:40px;padding:0 14px;border:1px solid oklch(0.922 0 0);border-radius:8px;font:500 14px Inter,sans-serif;cursor:pointer}.ds-btn-outline:hover{background:oklch(0.97 0 0)}.ds-btn-outline:focus-visible{outline:none;box-shadow:0 0 0 3px oklch(0.708 0 0 / .5)}"
     },
     {
-      "name": "Stack Chip", "kind": "chip", "refersTo": "stack-chip",
-      "description": "Tecnologia do case em mono.",
-      "html": "<span class=\"ds-chip\">Next.js</span>",
-      "css": ".ds-chip{display:inline-block;background:oklch(0.97 0.014 254.604);color:oklch(0.488 0.243 264.376);padding:2px 8px;border-radius:4px;font:400 11px 'Geist Mono',ui-monospace,monospace}"
+      "name": "Stack Line",
+      "kind": "custom",
+      "refersTo": "stack-line",
+      "description": "Stack em linha mono, sem chips.",
+      "html": "<p class=\"ds-stack\">TypeScript · Next.js · Fastify · tRPC · +2</p>",
+      "css": ".ds-stack{margin:0;font:400 12px/1.6 'Geist Mono',ui-monospace,monospace;color:oklch(0.488 0.243 264.376)}"
     },
     {
-      "name": "Case Card", "kind": "card", "refersTo": "case-card",
-      "description": "Resumo de projeto com stack e rodapé.",
-      "html": "<div class=\"ds-card\"><h3>BlueDraft</h3><p>Plataforma de planejamento de aulas.</p><span class=\"ds-card-link\">Ler case →</span></div>",
-      "css": ".ds-card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:24px;max-width:320px;font-family:Inter,sans-serif;transition:border-color .15s,box-shadow .15s}.ds-card:hover{border-color:oklch(0.546 0.245 262.881 / .4);box-shadow:0 4px 6px -1px rgb(0 0 0/.1)}.ds-card h3{margin:0 0 8px;font-size:18px;font-weight:600;color:#111827}.ds-card p{margin:0 0 16px;font-size:14px;line-height:1.6;color:#4b5563}.ds-card-link{font-size:12px;font-weight:500;color:oklch(0.546 0.245 262.881)}"
+      "name": "Case Card",
+      "kind": "card",
+      "refersTo": "case-card",
+      "description": "Resumo de projeto com stack em linha e rodapé.",
+      "html": "<div class=\"ds-card\"><h3>BlueDraft</h3><p>Plataforma de planejamento de aulas.</p><p class=\"ds-card-stack\">TypeScript · Next.js · Fastify · tRPC · +2</p><span class=\"ds-card-link\">Ler case →</span></div>",
+      "css": ".ds-card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:24px;max-width:320px;font-family:Inter,sans-serif;transition:border-color .15s,box-shadow .15s}.ds-card:hover{border-color:oklch(0.546 0.245 262.881 / .4);box-shadow:0 4px 6px -1px rgb(0 0 0/.1)}.ds-card h3{margin:0 0 8px;font-size:18px;font-weight:600;color:#111827}.ds-card p{margin:0 0 12px;font-size:14px;line-height:1.6;color:#4b5563}.ds-card .ds-card-stack{font:400 12px/1.6 'Geist Mono',ui-monospace,monospace;color:oklch(0.488 0.243 264.376)}.ds-card-link{font-size:12px;font-weight:500;color:oklch(0.546 0.245 262.881)}"
+    },
+    {
+      "name": "Record Block",
+      "kind": "custom",
+      "refersTo": "record-block",
+      "description": "Cabeçalho de case: lista de definição em mono sobre grafite.",
+      "html": "<dl class=\"ds-record\"><dt>papel</dt><dd>Autor e desenvolvedor</dd><dt>status</dt><dd>Em desenvolvimento</dd><dt>código</dt><dd>privado; esta página descreve, não expõe</dd></dl>",
+      "css": ".ds-record{display:grid;grid-template-columns:auto 1fr;gap:8px 24px;margin:0;padding:20px;border:1px solid rgb(255 255 255/.1);border-radius:14px;background:oklch(0.13 0.028 261.692);font:400 14px/1.6 'Geist Mono',ui-monospace,monospace}.ds-record dt{color:#60a5fa}.ds-record dd{margin:0;color:#d1d5db}"
+    },
+    {
+      "name": "Academy Panel",
+      "kind": "card",
+      "refersTo": "academy-panel",
+      "description": "Painel branco com pilares do curso, borda âmbar.",
+      "html": "<div class=\"ds-panel\"><h3>Como o curso ensina</h3><ul><li>Aprender fazendo</li><li>Diagnóstico: sintoma → causa raiz</li><li>Conexão com o mercado real</li></ul></div>",
+      "css": ".ds-panel{background:#fff;border:1px solid oklch(0.924 0.12 95.746);border-radius:14px;padding:24px;max-width:320px;font-family:Inter,sans-serif}.ds-panel h3{margin:0 0 12px;font-size:14px;font-weight:600;color:#111827}.ds-panel ul{margin:0;padding:0;list-style:none}.ds-panel li{padding:12px 0;font-size:14px;color:#374151;border-top:1px solid oklch(0.962 0.059 95.617)}.ds-panel li:first-child{border-top:0}"
     }
   ],
   "narrative": {
     "northStar": "O Caderno de Bordo",
     "overview": "O site se comporta como o diário técnico de quem diagnostica sistemas: página clara, registro numerado, detalhes em mono. A estrutura repete o método do próprio Danilo (sintoma, causa raiz, documentação), então a interface prova o discurso em vez de decorá-lo.",
-    "keyCharacteristics": ["Tema claro apenas; sem dark mode neste ciclo.", "Azul para ação e navegação, âmbar exclusivo da Academy.", "Mono para rótulos, numeração e stack; Inter para o resto.", "Plano com borda fina; sombra só em resposta a hover.", "Foto em PNG transparente sobre forma azul suave."],
-    "rules": [
-      { "name": "The Amber Is Course Rule", "body": "Âmbar aparece só em Academy e CTAs de curso. Fora disso o acento é azul.", "section": "colors" },
-      { "name": "The Contrast Rule", "body": "Texto âmbar sobre fundo claro usa tom escuro (amber-800); âmbar saturado fica em fundos de botão com texto grafite.", "section": "colors" },
-      { "name": "The Mono Is Metadata Rule", "body": "Mono só para metadado: eyebrows, numeração, stack, exemplos de log.", "section": "typography" },
-      { "name": "The Flat-At-Rest Rule", "body": "Superfícies não têm sombra em repouso. Sombra é resposta a hover.", "section": "elevation" }
+    "keyCharacteristics": [
+      "Tema claro apenas; sem dark mode neste ciclo.",
+      "Azul para ação e navegação, âmbar exclusivo da Academy.",
+      "Mono para rótulos, numeração e stack; Inter para o resto.",
+      "Plano com borda fina; sombra só em resposta a hover.",
+      "Foto em PNG transparente sobre forma azul suave.",
+      "Seções da home separadas por fundo e por borda: branco, cinza névoa, grafite, creme âmbar, cinza névoa.",
+      "Stack e metadados em linhas mono separadas por \" · \", sem chips."
     ],
-    "dos": ["Do usar azul Techs para toda ação principal e âmbar apenas em Academy e CTAs de curso.", "Do manter sombras fora do estado de repouso; borda de 1px faz o trabalho.", "Do usar Geist Mono em eyebrows, numeração e stack.", "Do alternar faixas claras com grafite para criar ritmo.", "Do mostrar cadeado e \"Repositório privado\" em projetos privados, nunca um botão de repositório."],
-    "donts": ["Don't reintroduzir a divisão em cartões Developer/Teacher, o avatar do Unsplash ou o terminal \"build-amazing-things\".", "Don't usar âmbar como acento geral nem texto âmbar saturado sobre branco.", "Don't adicionar dark mode ou gradientes neste ciclo.", "Don't usar mono em texto corrido.", "Don't inventar métricas, depoimentos ou logos de clientes para preencher seções."]
+    "rules": [
+      {
+        "name": "The Amber Is Course Rule",
+        "body": "Âmbar aparece só em Academy e CTAs de curso. Fora disso o acento é azul.",
+        "section": "colors"
+      },
+      {
+        "name": "The Contrast Rule",
+        "body": "Texto âmbar sobre fundo claro usa tom escuro (amber-800); âmbar saturado fica em fundos de botão com texto grafite.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mono Is Metadata Rule",
+        "body": "Mono só para metadado: eyebrows de seção, numeração, linhas de stack, blocos de registro e exemplos de log. Nunca em parágrafo corrido, e nunca para um nome próprio.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-At-Rest Rule",
+        "body": "Superfícies não têm sombra em repouso. Sombra é resposta a hover.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do usar azul Techs para toda ação principal e âmbar apenas em Academy e CTAs de curso.",
+      "Do manter sombras fora do estado de repouso; borda de 1px faz o trabalho.",
+      "Do usar Geist Mono em eyebrows de seção, numeração, linhas de stack e blocos de registro.",
+      "Do separar seções da home por troca de fundo mais borda de 1px.",
+      "Do manter alvos de toque de pelo menos 44px e respeitar prefers-reduced-motion.",
+      "Do mostrar cadeado e \"Repositório privado\" em projetos privados, nunca um botão de repositório."
+    ],
+    "donts": [
+      "Don't reintroduzir a divisão em cartões Developer/Teacher, o avatar do Unsplash ou o terminal \"build-amazing-things\".",
+      "Don't usar âmbar como acento geral nem texto âmbar saturado sobre branco.",
+      "Don't adicionar dark mode ou gradientes neste ciclo.",
+      "Don't usar mono em texto corrido nem para um nome próprio.",
+      "Don't voltar a usar chips de tecnologia; stack é linha mono.",
+      "Don't usar seta diagonal (ArrowUpRight) em link interno; ela é só para link externo.",
+      "Don't inventar métricas, depoimentos ou logos de clientes para preencher seções."
+    ]
   }
 }
