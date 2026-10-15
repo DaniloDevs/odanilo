@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "@/components/site/page-header";
 import { getPosts } from "@/content";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Blog",
   description: "Notas técnicas sobre arquitetura, diagnóstico e ensino.",
-};
+  path: "/blog",
+});
 
 export default async function BlogPage() {
   const posts = await getPosts();

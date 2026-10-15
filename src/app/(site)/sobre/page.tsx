@@ -3,12 +3,14 @@ import Image from "next/image";
 import { PageHeader } from "@/components/site/page-header";
 import Timeline from "@/components/site/timeline";
 import { getExperience, getProfile } from "@/content";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Sobre",
   description:
     "Desenvolvedor fullstack e professor técnico de TI: método, experiência e stack.",
-};
+  path: "/sobre",
+});
 
 export default async function AboutPage() {
   const [profile, experience] = await Promise.all([

@@ -3,7 +3,7 @@
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { siteConfig } from "@/lib/site";
 
 const links = [
@@ -16,11 +16,34 @@ const links = [
 export default function NavBar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const toggleRef = useRef<HTMLButtonElement>(null);
   const isActive = (to: string) =>
     pathname === to || pathname.startsWith(`${to}/`);
 
+  // Fecha o menu ao navegar para outra página.
+  // biome-ignore lint/correctness/useExhaustiveDependencies: pathname é o gatilho
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  // Esc fecha o menu e devolve o foco ao botão.
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
   return (
-    <nav className="sticky top-0 z-50 border-b border-gray-100 bg-white/80 backdrop-blur-md">
+    <nav
+      aria-label="Principal"
+      className="sticky top-0 z-50 border-b border-gray-100 bg-white/80 backdrop-blur-md"
+    >
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-6">
         <Link
           href="/"
@@ -34,6 +57,7 @@ export default function NavBar() {
             <Link
               key={l.to}
               href={l.to}
+              aria-current={isActive(l.to) ? "page" : undefined}
               className={`text-sm transition-colors ${
                 isActive(l.to)
                   ? "font-medium text-gray-900"
@@ -52,25 +76,31 @@ export default function NavBar() {
         </div>
 
         <button
+          ref={toggleRef}
           type="button"
           onClick={() => setOpen(!open)}
-          className="text-gray-500 sm:hidden"
-          aria-label="Menu"
+          className="-mr-2.5 inline-flex size-11 items-center justify-center text-gray-600 sm:hidden"
+          aria-label={open ? "Fechar menu" : "Abrir menu"}
           aria-expanded={open}
+          aria-controls="menu-mobile"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
       {open && (
-        <div className="space-y-3 border-b border-gray-100 bg-white px-6 pb-4 sm:hidden">
+        <div
+          id="menu-mobile"
+          className="border-b border-gray-100 bg-white px-6 pb-3 sm:hidden"
+        >
           {links.map((l) => (
             <Link
               key={l.to}
               href={l.to}
               onClick={() => setOpen(false)}
-              className={`block py-1 text-sm ${
-                isActive(l.to) ? "font-medium text-gray-900" : "text-gray-500"
+              aria-current={isActive(l.to) ? "page" : undefined}
+              className={`flex min-h-11 items-center text-sm ${
+                isActive(l.to) ? "font-medium text-gray-900" : "text-gray-600"
               }`}
             >
               {l.label}
@@ -79,7 +109,7 @@ export default function NavBar() {
           <Link
             href="#contato"
             onClick={() => setOpen(false)}
-            className="block py-1 text-sm font-medium text-brand"
+            className="flex min-h-11 items-center text-sm font-medium text-brand"
           >
             Contato
           </Link>

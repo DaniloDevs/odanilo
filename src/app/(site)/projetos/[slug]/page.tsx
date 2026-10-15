@@ -10,6 +10,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { buttonVariants } from "@/components/ui/button-variants";
 import { getFeaturedProjects, getProject, getProjects } from "@/content";
+import { pageMetadata } from "@/lib/metadata";
 
 type Params = { slug: string };
 
@@ -25,7 +26,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = await getProject(slug);
   if (!project) return {};
-  return { title: project.title, description: project.summary };
+  return pageMetadata({
+    title: project.title,
+    description: project.summary,
+    path: `/projetos/${project.slug}`,
+  });
 }
 
 export default async function ProjectPage({
@@ -96,6 +101,13 @@ export default async function ProjectPage({
               Ver no ar
             </a>
           )}
+          {project.visibility === "public" &&
+            !project.repoUrl &&
+            !project.demoUrl && (
+              <span className="text-sm text-gray-500">
+                Repositório ainda não publicado.
+              </span>
+            )}
           {project.visibility === "private" && (
             <span className="inline-flex items-center gap-1.5 text-sm text-gray-500">
               <Lock className="h-4 w-4" />

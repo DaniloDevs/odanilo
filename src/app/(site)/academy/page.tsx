@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/site/page-header";
 import { buttonVariants } from "@/components/ui/button-variants";
 import { getAcademy, getTeaching } from "@/content";
+import { pageMetadata } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Techs Academy",
   description:
     "Cursos de informática para quem quer aprender fazendo. Metodologia e docência.",
-};
+  path: "/academy",
+});
 
 export default async function AcademyPage() {
   const [academy, teaching] = await Promise.all([getAcademy(), getTeaching()]);

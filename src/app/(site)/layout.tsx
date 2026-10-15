@@ -10,8 +10,16 @@ export default async function SiteLayout({
 
   return (
     <div className="flex min-h-screen flex-col bg-white">
+      <a
+        href="#conteudo"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-gray-900 focus:shadow-md"
+      >
+        Pular para o conteúdo
+      </a>
       <NavBar />
-      <main className="flex-1">{children}</main>
+      <main id="conteudo" tabIndex={-1} className="flex-1 outline-none">
+        {children}
+      </main>
       <ContactCta profile={profile} />
       <Footer />
     </div>

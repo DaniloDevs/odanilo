@@ -4,12 +4,14 @@ import Link from "next/link";
 import { CaseCard } from "@/components/site/case-card";
 import { PageHeader } from "@/components/site/page-header";
 import { getFeaturedProjects, getProjects } from "@/content";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Projetos",
   description:
     "Cases e projetos: problema, decisões de arquitetura e trade-offs.",
-};
+  path: "/projetos",
+});
 
 export default async function ProjectsPage() {
   const [featured, all] = await Promise.all([
@@ -52,7 +54,7 @@ export default async function ProjectsPage() {
                         {p.status}
                       </span>
                     </p>
-                    <p className="mt-1 truncate text-sm text-gray-600">
+                    <p className="mt-1 line-clamp-2 text-sm text-gray-600">
                       {p.summary}
                     </p>
                   </div>
