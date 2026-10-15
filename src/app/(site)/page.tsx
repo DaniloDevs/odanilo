@@ -21,8 +21,10 @@ export default async function Home() {
           Cases em destaque
         </h2>
         <p className="mb-10 text-sm text-gray-500">
-          Sistemas que desenhei e mantenho. Os repositórios são privados; cada
-          case mostra o problema, as decisões e os trade-offs.
+          Sistemas que desenhei e mantenho. Os repositórios são privados, então
+          cada case conta o problema, as decisões e os trade-offs sem expor
+          código. O BlueDraft já está completo; os outros dois estão em
+          preparação.
         </p>
         <div className="grid gap-5 md:grid-cols-3">
           {featured.map((project) => (

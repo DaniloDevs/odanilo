@@ -146,7 +146,8 @@ export default async function ProjectPage({
           </div>
         ) : project.featured ? (
           <p className="mt-14 rounded-xl border border-dashed border-gray-300 p-6 text-sm text-gray-600">
-            O case completo deste projeto está em preparação.
+            O case completo deste projeto (problema, decisões e trade-offs) está
+            em preparação. O BlueDraft já tem o formato completo.
           </p>
         ) : null}
       </div>

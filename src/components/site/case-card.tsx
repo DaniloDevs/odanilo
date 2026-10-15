@@ -41,10 +41,14 @@ export function CaseCard({ project }: { project: Project }) {
             </>
           )}
         </span>
-        <span className="flex items-center gap-1 font-medium text-brand group-hover:text-brand-strong">
-          {project.case ? "Ler case" : "Case em breve"}
-          <ArrowUpRight className="h-3.5 w-3.5" />
-        </span>
+        {project.case ? (
+          <span className="flex items-center gap-1 font-medium text-brand group-hover:text-brand-strong">
+            Ler case
+            <ArrowUpRight className="h-3.5 w-3.5" />
+          </span>
+        ) : (
+          <span className="text-gray-500">Case em preparação</span>
+        )}
       </div>
     </Link>
   );

@@ -39,7 +39,9 @@ export function WorkMethod() {
         ))}
       </div>
       <div className="mt-12 overflow-hidden rounded-xl border border-white/10 bg-black/30 p-5 font-mono text-sm leading-relaxed text-gray-300">
-        <p className="text-gray-500"># exemplo: XCupons</p>
+        <p className="text-gray-500">
+          # exemplo: XCupons (case completo em preparação)
+        </p>
         <p>
           <span className="text-blue-400">sintoma</span> catálogo acoplado ao
           Mercado Livre

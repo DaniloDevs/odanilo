@@ -18,7 +18,7 @@ export const projects: Project[] = [
       decisions: [
         {
           title: "Blueprint separado da execução",
-          body: "O planejamento (disciplina, ciclos, aulas) é um blueprint. Cada turma recebe uma vigência, uma cópia em execução. Mudar o blueprint nunca altera uma vigência por baixo dos panos.",
+          body: "O planejamento (disciplina, ciclos, aulas) é um blueprint, o plano-modelo do professor. Cada turma recebe uma vigência: a cópia desse plano em execução naquela turma. Mudar o blueprint nunca altera uma vigência por baixo dos panos.",
         },
         {
           title: "Sync Engine com diff revisado",
