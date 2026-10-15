@@ -6,7 +6,7 @@ export const academy: Academy = {
   hubUrl: "https://hotmart.com/pt-br/club/techs-academy",
   courseUrl: "https://hotmart.com/pt-br/club/techs-academy/products/8488982",
   intro:
-    "O Techs Academy reúne os cursos que eu monto a partir do que ensino em sala e do que uso no trabalho. O tom é técnico e direto, como o de um dev explicando para outro dev.",
+    "No Techs Academy você aprende informática do começo, no seu ritmo, com aulas curtas e atividades para praticar. Os cursos nascem do que ensino em sala e do que uso no trabalho, então cada passo tem um motivo e uma aplicação real.",
   structure:
     "O curso é organizado em 4 ciclos baseados na taxonomia de Bloom: parte do entendimento da estrutura de sistemas e avança até UML avançada e a documentação técnica completa de um sistema.",
   pillars: [

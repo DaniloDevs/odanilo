@@ -134,18 +134,6 @@ export const projects: Project[] = [
     order: 7,
   },
   {
-    slug: "async-print-api",
-    title: "Async Print API",
-    summary:
-      "Orquestrador de impressão assíncrona orientado a eventos e domínios, com filas BullMQ e métricas por fila.",
-    role: "Autor",
-    stack: ["TypeScript", "Fastify", "BullMQ", "Redis", "Prisma", "Biome"],
-    status: "Projeto pessoal",
-    visibility: "public",
-    featured: false,
-    order: 8,
-  },
-  {
     slug: "saas-boilerplate",
     title: "SaaS Boilerplate",
     summary:

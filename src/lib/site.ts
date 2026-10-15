@@ -3,8 +3,8 @@ export const siteConfig = {
   shortName: "Danilo Romão",
   url:
     process.env.NEXT_PUBLIC_SITE_URL ??
-    (process.env.VERCEL_PROJECT_PRODUCTION_URL
-      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    (process.env.NODE_ENV === "production"
+      ? "https://odanilo.vercel.app"
       : "http://localhost:3000"),
   description:
     "Desenvolvedor fullstack que diagnostica, estrutura e documenta sistemas. Também professor de TI e criador do Techs Academy.",
