@@ -16,7 +16,7 @@ export default async function Home() {
     <>
       <Hero profile={profile} />
       <SectionWrapper id="cases">
-        <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+        <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl">
           Cases em destaque
         </h2>
         <p className="mb-10 text-sm text-gray-500">

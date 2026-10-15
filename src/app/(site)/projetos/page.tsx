@@ -1,4 +1,4 @@
-import { ArrowUpRight, Lock } from "lucide-react";
+import { ArrowRight, Lock } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CaseCard } from "@/components/site/case-card";
@@ -37,7 +37,7 @@ export default async function ProjectsPage() {
       </section>
       <section className="px-6 pt-6 pb-20">
         <div className="mx-auto max-w-5xl">
-          <h2 className="mb-6 text-xl font-bold tracking-tight text-gray-900">
+          <h2 className="mb-6 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl">
             Outros projetos
           </h2>
           <ul className="divide-y divide-gray-100 rounded-xl border border-gray-200">
@@ -61,7 +61,7 @@ export default async function ProjectsPage() {
                   {p.visibility === "private" ? (
                     <Lock className="h-4 w-4 shrink-0 text-gray-400" />
                   ) : (
-                    <ArrowUpRight className="h-4 w-4 shrink-0 text-gray-400 group-hover:text-brand" />
+                    <ArrowRight className="h-4 w-4 shrink-0 text-gray-400 group-hover:text-brand" />
                   )}
                 </Link>
               </li>

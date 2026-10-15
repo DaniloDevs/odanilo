@@ -8,7 +8,7 @@ export function ContactCta({ profile }: { profile: Profile }) {
   return (
     <section id="contato" className="scroll-mt-14 bg-gray-50 px-6 py-20">
       <div className="mx-auto max-w-xl text-center">
-        <h2 className="mb-3 text-2xl font-bold tracking-tight text-gray-900">
+        <h2 className="mb-3 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl">
           Vamos conversar?
         </h2>
         <p className="mb-8 text-sm leading-relaxed text-gray-600">

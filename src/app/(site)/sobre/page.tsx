@@ -43,7 +43,7 @@ export default async function AboutPage() {
 
       <section className="px-6 py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="mb-10 text-2xl font-bold tracking-tight text-gray-900">
+          <h2 className="mb-10 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl">
             Experiência
           </h2>
           <Timeline
@@ -58,16 +58,9 @@ export default async function AboutPage() {
                 <p className="mt-2 text-sm leading-relaxed text-gray-600">
                   {e.description}
                 </p>
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                  {e.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded bg-gray-100 px-2 py-0.5 font-mono text-[11px] text-gray-600"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
+                <p className="mt-3 font-mono text-xs leading-relaxed text-gray-500">
+                  {e.tech.join(" · ")}
+                </p>
               </div>
             )}
           />
@@ -76,7 +69,7 @@ export default async function AboutPage() {
 
       <section className="bg-gray-50 px-6 py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="mb-8 text-2xl font-bold tracking-tight text-gray-900">
+          <h2 className="mb-8 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl">
             Stack
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -85,16 +78,9 @@ export default async function AboutPage() {
                 <h3 className="mb-2 text-sm font-semibold text-gray-900">
                   {g.category}
                 </h3>
-                <div className="flex flex-wrap gap-1.5">
-                  {g.items.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded bg-white px-2 py-0.5 font-mono text-[11px] text-gray-700 ring-1 ring-gray-200"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
+                <p className="font-mono text-xs leading-relaxed text-gray-600">
+                  {g.items.join(" · ")}
+                </p>
               </div>
             ))}
           </div>

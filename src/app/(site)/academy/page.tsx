@@ -49,7 +49,7 @@ export default async function AcademyPage() {
 
       <section className="bg-academy-soft px-6 py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+          <h2 className="text-2xl font-bold tracking-tight text-gray-900 md:text-3xl">
             Como eu ensino
           </h2>
           <div className="mt-8 grid gap-8 md:grid-cols-3">
@@ -73,7 +73,7 @@ export default async function AcademyPage() {
 
       <section className="px-6 py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+          <h2 className="text-2xl font-bold tracking-tight text-gray-900 md:text-3xl">
             Em sala de aula
           </h2>
           <div className="mt-8 grid gap-5 md:grid-cols-2">
@@ -95,7 +95,7 @@ export default async function AcademyPage() {
 
           {teaching.talks.length > 0 && (
             <>
-              <h2 className="mt-14 text-2xl font-bold tracking-tight text-gray-900">
+              <h2 className="mt-14 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl">
                 Palestras
               </h2>
               <div className="mt-6 space-y-5">

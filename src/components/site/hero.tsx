@@ -10,10 +10,7 @@ export function Hero({ profile }: { profile: Profile }) {
     <section className="px-6 pt-14 pb-16 md:pt-20 md:pb-24">
       <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-[1.3fr_1fr]">
         <div>
-          <p className="font-mono text-xs uppercase tracking-widest text-brand">
-            {profile.shortName}
-          </p>
-          <h1 className="mt-4 text-3xl leading-tight font-extrabold tracking-tight text-gray-900 md:text-5xl">
+          <h1 className="text-3xl leading-tight font-extrabold tracking-tight text-gray-900 md:text-5xl">
             {profile.headline}
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-gray-600">
