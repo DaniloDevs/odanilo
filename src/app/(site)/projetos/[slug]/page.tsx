@@ -1,10 +1,4 @@
-import {
-  ArrowLeft,
-  ArrowRight,
-  ExternalLink,
-  Github,
-  Lock,
-} from "lucide-react";
+import { ArrowLeft, ArrowRight, ExternalLink, Github } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -57,26 +51,29 @@ export default async function ProjectPage({
           Projetos
         </Link>
 
-        <p className="mt-8 font-mono text-xs uppercase tracking-widest text-brand">
-          {project.status} · {project.role}
-        </p>
-        <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl">
+        <h1 className="mt-8 text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl">
           {project.title}
         </h1>
         <p className="mt-4 text-base leading-relaxed text-gray-600">
           {project.summary}
         </p>
 
-        <div className="mt-5 flex flex-wrap gap-1.5">
-          {project.stack.map((t) => (
-            <span
-              key={t}
-              className="rounded bg-brand-soft px-2 py-0.5 font-mono text-xs text-brand-strong"
-            >
-              {t}
-            </span>
-          ))}
-        </div>
+        <dl className="mt-8 grid grid-cols-[auto_1fr] gap-x-6 gap-y-2 rounded-xl border border-white/10 bg-graphite p-5 font-mono text-sm leading-relaxed">
+          <dt className="text-blue-400">papel</dt>
+          <dd className="min-w-0 text-gray-300">{project.role}</dd>
+          <dt className="text-blue-400">status</dt>
+          <dd className="min-w-0 text-gray-300">{project.status}</dd>
+          <dt className="text-blue-400">código</dt>
+          <dd className="min-w-0 text-gray-300">
+            {project.visibility === "private"
+              ? "privado; esta página descreve, não expõe"
+              : project.repoUrl
+                ? "aberto"
+                : "ainda não publicado"}
+          </dd>
+          <dt className="text-blue-400">stack</dt>
+          <dd className="min-w-0 text-gray-300">{project.stack.join(" · ")}</dd>
+        </dl>
 
         <div className="mt-6 flex flex-wrap items-center gap-3">
           {project.visibility === "public" && project.repoUrl && (
@@ -101,20 +98,6 @@ export default async function ProjectPage({
               Ver no ar
             </a>
           )}
-          {project.visibility === "public" &&
-            !project.repoUrl &&
-            !project.demoUrl && (
-              <span className="text-sm text-gray-500">
-                Repositório ainda não publicado.
-              </span>
-            )}
-          {project.visibility === "private" && (
-            <span className="inline-flex items-center gap-1.5 text-sm text-gray-500">
-              <Lock className="h-4 w-4" />
-              Repositório privado. Esta página descreve o problema e as
-              decisões, sem expor código.
-            </span>
-          )}
         </div>
 
         {project.case ? (
@@ -131,7 +114,7 @@ export default async function ProjectPage({
               <h2 className="text-xl font-bold tracking-tight text-gray-900">
                 Decisões de arquitetura
               </h2>
-              <ol className="mt-5 space-y-6">
+              <ol className="mt-5 space-y-6 border-l border-gray-200 pl-5">
                 {project.case.decisions.map((d, i) => (
                   <li key={d.title} className="flex gap-4">
                     <span className="font-mono text-sm text-brand">
