@@ -33,6 +33,7 @@ export interface Experience {
   period: string;
   description: string;
   tech: string[];
+  track: "dev" | "teaching";
 }
 
 export interface SkillGroup {

@@ -8,6 +8,7 @@ export const experience: Experience[] = [
     description:
       "Leciono Sistemas de Computação, Análise e Desenvolvimento de Sistemas e Documentação Técnica no curso técnico profissionalizante em Informática. Ensinar arquitetura de software reforça minha capacidade de escrever código mais claro e bem documentado.",
     tech: ["Documentação técnica", "Arquitetura de sistemas", "Ensino"],
+    track: "teaching",
   },
   {
     company: "Instituto Loide Martha",
@@ -16,6 +17,7 @@ export const experience: Experience[] = [
     description:
       "Ensino de computação para alunos do Ensino Fundamental, com foco em introdução à tecnologia da informação e uso de ferramentas digitais.",
     tech: ["Informática básica", "Ensino fundamental"],
+    track: "teaching",
   },
   {
     company: "UEZ Company",
@@ -24,5 +26,6 @@ export const experience: Experience[] = [
     description:
       "Desenvolvimento e manutenção de sistemas frontend e backend da plataforma de serviços. Contribuí na construção da API principal com Fastify e TypeScript, integração com autenticação social e gestão do banco de dados relacional com Prisma.",
     tech: ["Node.js", "TypeScript", "Fastify", "Prisma", "PostgreSQL", "React"],
+    track: "dev",
   },
 ];
