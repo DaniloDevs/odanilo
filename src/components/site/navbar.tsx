@@ -1,12 +1,13 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { Mail, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { siteConfig } from "@/lib/site";
 
 const links = [
+  { to: "/", label: "Home" },
   { to: "/projetos", label: "Projetos" },
   { to: "/academy", label: "Academy" },
   { to: "/blog", label: "Blog" },
@@ -69,9 +70,11 @@ export default function NavBar() {
           ))}
           <Link
             href="#contato"
-            className="rounded-md bg-brand px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-brand-strong"
+            aria-label="Contato"
+            title="Contato"
+            className="inline-flex size-9 items-center justify-center rounded-md bg-brand text-white transition-colors hover:bg-brand-strong"
           >
-            Contato
+            <Mail className="size-4" aria-hidden="true" />
           </Link>
         </div>
 
@@ -109,8 +112,9 @@ export default function NavBar() {
           <Link
             href="#contato"
             onClick={() => setOpen(false)}
-            className="flex min-h-11 items-center text-sm font-medium text-brand"
+            className="flex min-h-11 items-center gap-2 text-sm font-medium text-brand"
           >
+            <Mail className="size-4" aria-hidden="true" />
             Contato
           </Link>
         </div>
