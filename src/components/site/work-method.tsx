@@ -39,9 +39,7 @@ export function WorkMethod() {
         ))}
       </div>
       <div className="mt-12 overflow-hidden rounded-xl border border-white/10 bg-black/30 p-5 font-mono text-sm leading-relaxed text-gray-300">
-        <p className="text-gray-400">
-          # exemplo: XCupons (case completo em preparação)
-        </p>
+        <p className="text-gray-400"># exemplo: XCupons</p>
         <p>
           <span className="text-blue-400">sintoma</span> catálogo acoplado ao
           Mercado Livre
@@ -55,8 +53,8 @@ export function WorkMethod() {
           ofertas por origem
         </p>
         <p>
-          <span className="text-blue-400">registro</span> decisão documentada +
-          script de reconciliação da migração
+          <span className="text-blue-400">registro</span> decisão documentada em
+          specs e ADRs com as correções anotadas
         </p>
       </div>
     </SectionWrapper>

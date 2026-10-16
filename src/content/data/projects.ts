@@ -46,13 +46,58 @@ export const projects: Project[] = [
     slug: "xcupons",
     title: "XCupons",
     summary:
-      "Catálogo de produtos multi-marketplace. Nasceu acoplado ao Mercado Livre e está sendo redesenhado para ser agnóstico de origem; Shopee já roda de ponta a ponta.",
+      "Plataforma de automação de marketing de afiliados: coleta ofertas de marketplaces, agrupa anúncios do mesmo item, classifica por nicho, filtra por critérios configuráveis e publica em grupos de WhatsApp e Telegram. Opera com Mercado Livre e Shopee.",
     role: "Autor e desenvolvedor",
-    stack: ["TypeScript", "PostgreSQL", "Docker", "Turborepo"],
+    stack: [
+      "TypeScript",
+      "Fastify",
+      "Next.js",
+      "PostgreSQL",
+      "Prisma",
+      "BullMQ",
+      "Redis",
+      "n8n",
+      "Docker",
+      "Turborepo",
+    ],
     status: "Em produção",
     visibility: "private",
     featured: true,
     order: 2,
+    case: {
+      problem:
+        "O sistema foi desenhado em torno de um marketplace, e a Shopee mostrou onde isso quebrava. O preço mediano na Shopee era 3,9 vezes menor que no Mercado Livre (R$ 52,90 contra R$ 205), quase metade do catálogo Shopee ficava abaixo do menor piso de tier, e a comissão informada por anúncio era descartada no parsing.",
+      decisions: [
+        {
+          title: "Domínio agnóstico de marketplace",
+          body: "Marketplace vira entidade. O produto é canônico e agrupa as ofertas de cada marketplace. A categoria também é canônica, com comissão por origem, fixa ou por faixa de preço. Não existe condicional por marketplace no código: tudo é guiado por dados.",
+        },
+        {
+          title: "Medir antes de decidir",
+          body: "Dumps de produção restaurados em banco descartável derrubaram afirmações da própria spec, como a de que a Shopee já rodava ponta a ponta (no ambiente de desenvolvimento não havia dado nenhum). As correções ficaram anotadas nas specs, sem apagar o texto original.",
+        },
+        {
+          title: "Pipeline em filas com núcleo puro",
+          body: "O fluxo é filtro, mensagem e publicação, em filas BullMQ. Score, desconto, aprovação, matching e comissão ficam em um pacote sem I/O. A deduplicação de publicação é atômica.",
+        },
+        {
+          title: "Identidade e mensagem determinísticas",
+          body: "Anúncios do mesmo item se agrupam por similaridade de título, com limiar fixo no código. A IA foi removida porque nenhuma funcionalidade dela funcionava, e a mensagem virou uma função pura.",
+        },
+        {
+          title: "Migração modular em 8 grupos",
+          body: "Cada grupo é implantado com backup validado, imagens marcadas para rollback e conferência das migrations aplicadas.",
+        },
+      ],
+      tradeoffs: [
+        "A categoria canônica exige configurar a comissão de cada marketplace novo. A Shopee entrou com cópia das categorias do Mercado Livre.",
+        "O limiar de similaridade fixo é simples e explicável, mas não foi calibrado.",
+        "A mensagem determinística é previsível, mas sem variação de texto. A IA pode voltar depois, com o template como fallback.",
+        "Migrações que renomeiam tabelas exigem deploy com filas vazias e rollback via dump.",
+      ],
+      result:
+        "Sistema próprio, em produção com Mercado Livre e Shopee. Em outubro de 2026 eram 5.008 produtos, 5.479 ofertas, 14 nichos e 27 categorias. Seis dos oito grupos da migração estão implantados; o ciclo de status e a reingestão por fase estão implementados e aguardam deploy.",
+    },
   },
   {
     slug: "avaliacao-coordenadores",

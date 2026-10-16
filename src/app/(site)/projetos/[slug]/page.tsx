@@ -152,7 +152,7 @@ export default async function ProjectPage({
         ) : project.featured ? (
           <p className="mt-14 rounded-xl border border-dashed border-gray-300 p-6 text-sm text-gray-600">
             O case completo deste projeto (problema, decisões e trade-offs) está
-            em preparação. O BlueDraft já tem o formato completo.
+            em preparação. O BlueDraft e o XCupons já têm o formato completo.
           </p>
         ) : null}
 
