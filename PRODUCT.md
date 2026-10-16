@@ -33,8 +33,8 @@ Site em Next.js 16 (App Router), Tailwind 4, pt-BR. Conteúdo vem de uma camada 
 - Rotas: `/`, `/projetos`, `/projetos/[slug]`, `/academy`, `/blog` (placeholder "em breve"), `/sobre`, `/cv/developer`, `/cv/teacher`. Redirects permanentes: `/Developer` → `/`, `/Teacher` → `/academy`.
 - Projetos com `visibility: "private"` nunca exibem botão de repositório.
 - Só pt-BR; sem dark mode neste ciclo (decisão do spec).
-- Avaliação de coordenadores: instituição citada de forma neutra ("instituição de ensino técnico"), sem nomes, notas ou prints reais até autorização.
-- Fora do escopo atual: Payload CMS, posts reais de blog, cases completos de XCupons e Avaliação de coordenadores, i18n em inglês, analytics.
+- Fichas avaliativas de professores: o case cita as unidades e o Sophia, mas não o nome da instituição, e nunca expõe nomes de professores, notas ou prints reais.
+- Fora do escopo atual: Payload CMS, posts reais de blog, i18n em inglês, analytics.
 
 ## Brand Commitments
 
@@ -42,7 +42,7 @@ Spec de 2026-10-14 define como compromisso: azul do Techs Academy como cor princ
 
 ## Evidence on Hand
 
-- Cases: BlueDraft (completo), XCupons e Avaliação de coordenadores (resumo, case "em breve"), mais oito projetos em "Outros".
+- Cases: BlueDraft (completo), XCupons e Fichas avaliativas de professores (completos), mais oito projetos em "Outros".
 - Links do curso: hub `https://hotmart.com/pt-br/club/techs-academy`, produto `.../products/8488982`.
 - Foto em `public/danilo.png` (PNG com fundo transparente).
 - Ausentes e que não podem ser inventados: depoimentos, número de alunos, métricas de resultado, clientes nomeados.

@@ -24,18 +24,16 @@ const featured = projects
   .map((p) => p.slug);
 assert.deepEqual(
   featured,
-  ["bluedraft", "xcupons", "avaliacao-coordenadores"],
+  ["bluedraft", "xcupons", "fichas-avaliativas"],
   "destaques",
 );
 
-const coordenadores = projects.find(
-  (p) => p.slug === "avaliacao-coordenadores",
-);
-assert.ok(coordenadores, "projeto avaliacao-coordenadores ausente");
+const coordenadores = projects.find((p) => p.slug === "fichas-avaliativas");
+assert.ok(coordenadores, "projeto fichas-avaliativas ausente");
 assert.equal(coordenadores.demoUrl, undefined, "não deve ter demoUrl");
 assert.ok(
   !JSON.stringify(coordenadores).toLowerCase().includes("loide"),
-  "o projeto de avaliação de coordenadores não pode citar a instituição",
+  "o projeto de fichas avaliativas não pode citar o nome da instituição",
 );
 
 const everything = JSON.stringify({

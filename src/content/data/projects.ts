@@ -100,16 +100,58 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "avaliacao-coordenadores",
-    title: "Avaliação de coordenadores",
+    slug: "fichas-avaliativas",
+    title: "Fichas avaliativas de professores",
     summary:
-      "Sistema de avaliações de coordenadores de uma instituição de ensino: cadastro, campanhas, avaliações e importação de dados de um sistema de gestão escolar.",
+      "Sistema em que coordenadores avaliam professores por série e por ciclo, com histórico imutável, cadastro importado das listas de chamada do Sophia e dashboard analítico por unidade, segmento, série e disciplina.",
     role: "Desenvolvedor",
-    stack: ["Next.js", "TypeScript", "Prisma", "Supabase", "Zod"],
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "Supabase",
+      "PostgreSQL",
+      "Zod",
+      "Vitest",
+    ],
     status: "Em produção",
     visibility: "private",
     featured: true,
     order: 3,
+    case: {
+      problem:
+        "Uma instituição com duas unidades, Vila São Luís e Jardim Primavera, precisava avaliar professores de forma quantitativa e comparável entre ciclos, sem perder o histórico quando turmas, professores ou perguntas mudam. Um professor dá aula em várias turmas, mas deve ser avaliado uma vez por série, e só em uma turma onde leciona. O cadastro existia apenas em listas de chamada em planilha, exportadas do Sophia.",
+      decisions: [
+        {
+          title: "Histórico imutável por snapshot",
+          body: "A avaliação guarda uma cópia dos nomes de unidade, segmento, série, disciplina, professor, turma e ciclo, e a resposta guarda o texto da pergunta. As chaves estrangeiras usam SetNull, então editar ou excluir um cadastro não altera avaliações já feitas. O analítico agrega pelas chaves e usa o snapshot para os rótulos da época.",
+        },
+        {
+          title: "Fato acadêmico em vez de pares manuais",
+          body: "A hierarquia unidade, segmento, série e turma é normalizada, e o vínculo entre professor, disciplina e turma vem da lista de chamada. Isso substituiu o pareamento manual de turma e professor do MVP, que não escalava.",
+        },
+        {
+          title: "Geração por série com turma representativa",
+          body: "Cada professor é avaliado uma vez por série. O sistema escolhe uma turma representativa entre as que ele leciona, e o coordenador só pode trocar entre turmas elegíveis. Na regência polivalente, a geração colapsa em uma avaliação por série.",
+        },
+        {
+          title: "Escopo e autorização no servidor",
+          body: "O coordenador só vê campanhas ativas da sua unidade e os segmentos que lhe foram atribuídos. As regras ficam em Server Actions, sem depender de políticas no banco.",
+        },
+        {
+          title: "Importador testável",
+          body: 'A classificação e a normalização das planilhas são módulos puros com testes. O script de importação é idempotente e separa em um grupo "A classificar" o que a heurística não resolve.',
+        },
+      ],
+      tradeoffs: [
+        "O snapshot duplica dados e mantém o histórico fiel, mas o rótulo antigo convive com o cadastro atualizado.",
+        "A classificação de turmas por código é heurística e exige revisão manual.",
+        "Uma avaliação concluída não pode ser reaberta.",
+        "Não há trava de concorrência quando dois coordenadores abrem a mesma avaliação.",
+      ],
+      result:
+        "Em uso real pela instituição. O repositório é privado e o case descreve o sistema sem expor dados de professores, turmas ou notas.",
+    },
   },
   {
     slug: "uezcompany-api",

@@ -3,18 +3,18 @@
 - [x] Hero: título e subtítulo (`src/content/data/profile.ts`) → aprovado
 - [x] `availability` (meio período ou contrato) — quer mesmo publicar isso? → mantido
 - [x] `about` (3 parágrafos, `/sobre` e resumo dos CVs) → aprovado (layout de /sobre será refeito depois)
-- [ ] Case do BlueDraft inteiro (`src/content/data/projects.ts`) — conferir fatos e trade-offs → cases serão reescritos depois
-- [ ] Resumos de XCupons e Avaliação de coordenadores (cases ainda "em breve") → cases serão reescritos depois
+- [x] Case do BlueDraft inteiro (`src/content/data/projects.ts`) — conferir fatos e trade-offs → cases serão reescritos depois → reescrito
+- [x] Resumos de XCupons e Avaliação de coordenadores (cases ainda "em breve") → cases serão reescritos depois → reescritos
 - [x] Bloco "exemplo: XCupons" em `src/components/site/work-method.tsx` — a causa raiz é inferência do assistente → aprovado
 - [ ] `academy.ts`: intro, estrutura em 4 ciclos e pilares
 - [ ] Nome do curso 8488982: hoje o botão diz "Conhecer o curso"
-- [ ] Avaliação de coordenadores: autorizado citar a instituição pelo nome? (hoje o projeto é neutro)
+- [x] Avaliação de coordenadores: autorizado citar a instituição pelo nome? (hoje o projeto é neutro) → citar unidades e Sophia; sem nome da instituição
 - [x] URL de produção do site (`NEXT_PUBLIC_SITE_URL`) para sitemap e OG → https://odanilo.vercel.app
 - [x] DECISÃO: o nome do Instituto aparece em /sobre, /academy e nos CVs, então o projeto "Avaliação de coordenadores" continua identificável. Autorizar citar a instituição ou manter assim? → mantido como está (autorizado)
 - [x] async-print-api: o repositório DaniloDevs/async-print-api não existe (404). Remover o projeto, ajustar o link ou apontar para o repo certo? → projeto removido
 - [x] UezCompany API: a documentação pública (api.uezcompany.com/docs) está fora do ar; status foi para "Cliente" e o texto foi para o passado. Conferir. → mantido, só citado
 - [ ] XCupons: "está sendo redesenhado" e a stack listada (TypeScript, PostgreSQL, Docker, Turborepo); acrescentar o que mais se aplica.
-- [ ] Avaliação de coordenadores: confirmar o status "Em produção".
+- [x] Avaliação de coordenadores: confirmar o status "Em produção". → em uso real; projeto renomeado para Fichas avaliativas de professores
 - [x] academy.ts: o tom "como um dev explicando para outro dev" combina com um curso de informática para iniciantes? → híbrido: intro acolhedora, metodologia técnica
 - [ ] BlueDraft: "correções entram como novos registros" e o trade-off ligado a isso são inferências.
 - [x] Definir NEXT_PUBLIC_SITE_URL (ou domínio de produção na Vercel) antes de publicar. → fallback fixo em src/lib/site.ts
